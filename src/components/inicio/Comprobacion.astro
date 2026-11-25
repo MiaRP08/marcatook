@@ -1,0 +1,29 @@
+---
+/*
+  Sección de comprobación: confirma que cada parte del entorno funciona.
+  Los datos de la sección viven aquí arriba; el HTML de abajo los recorre con map().
+  Bórrala cuando construyas tu sitio.
+*/
+import Seccion from "../ui/Seccion.astro";
+
+const checks = [
+  { nombre: "Astro", detalle: "La página se arma con componentes y se sirve." },
+  { nombre: "Tailwind", detalle: "Colores, esquinas y sombras salen de los tokens de global.css." },
+  { nombre: "Datos", detalle: "El nombre del encabezado sale de src/datos/sitio.ts." },
+  { nombre: "Motion", detalle: "Estas tarjetas aparecieron una tras otra al bajar." },
+];
+---
+
+<Seccion id="comprobacion" etiqueta="01" titulo="Comprobación del entorno">
+  <ul class="grid gap-6 sm:grid-cols-2" data-revelar-cascada>
+    {
+      checks.map((check, indice) => (
+        <li class="rounded-marca bg-superficie p-6 shadow-marca borde-marca">
+          <p class="text-sm text-texto-suave">{String(indice + 1).padStart(2, "0")}</p>
+          <h3 class="mt-2 text-2xl font-bold">{check.nombre}</h3>
+          <p class="mt-2 text-texto-suave">{check.detalle}</p>
+        </li>
+      ))
+    }
+  </ul>
+</Seccion>

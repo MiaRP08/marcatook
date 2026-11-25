@@ -1,0 +1,52 @@
+---
+// Sección: ¿Qué hacemos? (Boceto 2 / Referencia 2a: Oilosophy)
+const contenido = {
+  etiqueta: "¿Qué hacemos?",
+  titulo: "Transformamos ideas en fotografías únicas.",
+  parrafos: [
+    "En TAKE, TOOK & TAKEN creamos fotografías personalizadas que reflejan la personalidad, el estilo y las ideas de cada persona.",
+    "Exploramos diferentes conceptos, colores, escenarios y composiciones para desarrollar imágenes originales, creativas y llenas de significado.",
+    "Nuestro propósito es que cada fotografía sea mucho más que una imagen: queremos que represente una experiencia especial y un recuerdo que permanezca en el tiempo.",
+  ],
+};
+---
+
+<section class="border-t border-[#A19E97]/40 bg-[#E9DED3] py-16 text-[#212220] md:py-24">
+  <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+    <!-- Contenedor Editorial Central (Composición continua y limpia) -->
+    <div
+      class="mx-auto max-w-4xl rounded-[8px] border border-[#A19E97] bg-[#F1F1DB] p-8 shadow-[0_4px_12px_rgb(0,0,0,0.12)] sm:p-12 lg:p-16"
+    >
+      <div class="mb-6">
+        <span
+          class="font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold tracking-widest text-[#5F5A54] uppercase"
+        >
+          {contenido.etiqueta}
+        </span>
+
+        <h2
+          class="mt-3 font-['Oswald',sans-serif] text-3xl leading-[1.15] font-bold tracking-tight text-[#212220] sm:text-4xl lg:text-5xl"
+        >
+          {contenido.titulo}
+        </h2>
+      </div>
+
+      <!-- Párrafos descriptivos -->
+      <div
+        class="space-y-6 font-['Lora',serif] text-base leading-relaxed text-[#212220]/90 sm:text-lg"
+      >
+        {contenido.parrafos.map((parrafo) => <p>{parrafo}</p>)}
+      </div>
+
+      <!-- Detalle decorativo minimalista -->
+      <div class="mt-8 flex items-center justify-between border-t border-[#A19E97]/40 pt-6">
+        <span
+          class="font-['Plus_Jakarta_Sans',sans-serif] text-xs font-medium tracking-wider text-[#5F5A54] uppercase"
+        >
+          Fotografía Personalizada
+        </span>
+        <span class="h-2 w-2 rounded-full bg-[#405A46]"></span>
+      </div>
+    </div>
+  </div>
+</section>

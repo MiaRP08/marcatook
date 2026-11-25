@@ -1,0 +1,76 @@
+---
+// Sección: Misión y Visión con fondo café (#5F5A54)
+const fundamentos = {
+  mision: {
+    titulo: "Misión",
+    texto:
+      "Crear fotografías personalizadas, originales y creativas que transformen las ideas de nuestros clientes en imágenes únicas, capaces de transmitir emociones, reflejar su personalidad y conservar momentos especiales.",
+  },
+  vision: {
+    titulo: "Visión",
+    texto:
+      "Ser un estudio creativo de fotografía reconocido por su originalidad, estilo y capacidad de transformar ideas en experiencias visuales únicas, inspirando a las personas a expresarse libremente a través de la fotografía.",
+  },
+};
+---
+
+<section class="border-t border-[#A19E97]/40 bg-[#E9DED3] py-16 text-[#212220] md:py-20">
+  <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+    <!-- Cuadrícula equilibrada: 2 tarjetas en tono café #5F5A54 -->
+    <div class="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:gap-10">
+      <!-- Bloque Misión -->
+      <article
+        class="flex flex-col justify-between rounded-[8px] border border-[#A19E97]/70 bg-[#5F5A54] p-8 text-[#FFFFFF] shadow-[0_4px_16px_rgba(33,34,32,0.18)] transition-all duration-300 hover:-translate-y-1 sm:p-10"
+      >
+        <div>
+          <div class="mb-4 flex items-center space-x-3">
+            <span class="h-3 w-3 rounded-full bg-[#F1F1DB]"></span>
+            <h2
+              class="font-['Oswald',sans-serif] text-2xl font-bold tracking-wide text-[#FFFFFF] uppercase sm:text-3xl"
+            >
+              {fundamentos.mision.titulo}
+            </h2>
+          </div>
+          <p class="font-['Lora',serif] text-base leading-relaxed text-[#F1F1DB]/95 sm:text-lg">
+            {fundamentos.mision.texto}
+          </p>
+        </div>
+
+        <div class="border-white/20 mt-8 border-t pt-4">
+          <span
+            class="font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold tracking-wider text-[#F1F1DB]/80 uppercase"
+          >
+            Propósito & Compromiso
+          </span>
+        </div>
+      </article>
+
+      <!-- Bloque Visión -->
+      <article
+        class="flex flex-col justify-between rounded-[8px] border border-[#A19E97]/70 bg-[#5F5A54] p-8 text-[#FFFFFF] shadow-[0_4px_16px_rgba(33,34,32,0.18)] transition-all duration-300 hover:-translate-y-1 sm:p-10"
+      >
+        <div>
+          <div class="mb-4 flex items-center space-x-3">
+            <span class="h-3 w-3 rounded-full bg-[#F1F1DB]"></span>
+            <h2
+              class="font-['Oswald',sans-serif] text-2xl font-bold tracking-wide text-[#FFFFFF] uppercase sm:text-3xl"
+            >
+              {fundamentos.vision.titulo}
+            </h2>
+          </div>
+          <p class="font-['Lora',serif] text-base leading-relaxed text-[#F1F1DB]/95 sm:text-lg">
+            {fundamentos.vision.texto}
+          </p>
+        </div>
+
+        <div class="border-white/20 mt-8 border-t pt-4">
+          <span
+            class="font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold tracking-wider text-[#F1F1DB]/80 uppercase"
+          >
+            Proyección & Futuro
+          </span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

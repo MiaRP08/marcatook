@@ -1,0 +1,78 @@
+---
+// Sección: Trabajos destacados (Boceto 1 / Referencia 1b: 818 Tequila)
+const tarjetasDestacadas = [
+  {
+    archivo: '/pack/imagenes/FT1E.jpeg',
+    titulo: 'Retrato con Identidad',
+    descripcion: 'Fotografías pensadas para capturar tu esencia y personalidad de forma auténtica.',
+    alt: 'Fotografía destacada de retrato - TAKE, TOOK & TAKEN'
+  },
+  {
+    archivo: '/pack/imagenes/FT1G.jpeg',
+    titulo: 'Creatividad & Color',
+    descripcion: 'Exploración de encuadres, sombras y composiciones que transforman ideas en arte.',
+    alt: 'Fotografía destacada creativa - TAKE, TOOK & TAKEN'
+  },
+  {
+    archivo: '/pack/imagenes/FT1R.jpeg',
+    titulo: 'Recuerdos & Estilo',
+    descripcion: 'Capturamos instantes irrepetibles con un cuidado editorial en cada detalle visual.',
+    alt: 'Fotografía destacada de estilo editorial - TAKE, TOOK & TAKEN'
+  }
+];
+---
+
+<section class="py-16 md:py-24 bg-[#E9DED3] border-t border-[#A19E97]/40 text-[#212220]">
+  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Encabezado de la Sección -->
+    <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+      <h2 class="font-['Oswald',sans-serif] text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#212220] uppercase">
+        Trabajos destacados
+      </h2>
+      <p class="font-['Lora',serif] text-base sm:text-lg text-[#5F5A54] mt-3">
+        Una selección de capturas donde el estilo, la emoción y la composición cobran protagonismo.
+      </p>
+    </div>
+
+    <!-- Fila de 3 Bloques destacados (Boceto 1 / Ref. 1b) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+      {tarjetasDestacadas.map((item) => (
+        <article class="group rounded-[8px] border border-[#A19E97] bg-[#F1F1DB] overflow-hidden shadow-[0_4px_12px_rgb(0,0,0,0.12)] flex flex-col transition-all duration-300 hover:-translate-y-1">
+          <!-- Imagen de gran formato -->
+          <div class="aspect-[3/4] w-full overflow-hidden bg-[#E9DED3]">
+            <img
+              src={item.archivo}
+              alt={item.alt}
+              loading="lazy"
+              class="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
+            />
+          </div>
+
+          <!-- Contenido: Título y Descripción -->
+          <div class="p-6 flex flex-col flex-grow justify-between border-t border-[#A19E97]/40">
+            <div>
+              <h3 class="font-['Oswald',sans-serif] text-xl font-bold text-[#212220] tracking-wide mb-2">
+                {item.titulo}
+              </h3>
+              <p class="font-['Lora',serif] text-sm text-[#5F5A54] leading-relaxed">
+                {item.descripcion}
+              </p>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Botón de Llamada a la Acción -->
+    <div class="mt-12 sm:mt-16 text-center">
+      <a
+        href="/proyectos"
+        class="font-['Plus_Jakarta_Sans',sans-serif] inline-flex justify-center items-center px-8 py-4 rounded-[8px] bg-[#405A46] text-[#FFFFFF] text-sm font-semibold tracking-wider uppercase transition-all duration-300 hover:opacity-90 active:scale-[0.98] shadow-[0_4px_12px_rgb(0,0,0,0.12)] text-center"
+      >
+        EXPLORAR PROYECTOS
+      </a>
+    </div>
+
+  </div>
+</section>

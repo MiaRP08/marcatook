@@ -1,0 +1,57 @@
+---
+// Sección: Texto complementario tras la galería
+const contenido = {
+  etiqueta: "Nuestra visión",
+  titulo: "Tu imaginación es el comienzo de algo increíble.",
+  parrafos: [
+    "Cada proyecto comienza con una idea y se transforma en una experiencia visual diferente. Nos encanta crear fotografías que sorprendan, transmitan emociones y reflejen la esencia de quienes confían en nuestro trabajo.",
+    "Porque no se trata solo de tomar fotografías, sino de crear imágenes que tengan personalidad, estilo y significado.",
+  ],
+};
+---
+
+<section class="border-t border-[#A19E97]/40 bg-[#E9DED3] py-16 text-[#212220] md:py-24">
+  <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+    <!-- Bloque Editorial Centrado -->
+    <div
+      class="mx-auto flex max-w-4xl flex-col items-center rounded-[8px] border border-[#A19E97] bg-[#F1F1DB] p-8 text-center shadow-[0_4px_12px_rgb(0,0,0,0.12)] sm:p-12 lg:p-16"
+    >
+      <span
+        class="mb-3 font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold tracking-widest text-[#5F5A54] uppercase"
+      >
+        {contenido.etiqueta}
+      </span>
+
+      <h2
+        class="max-w-2xl font-['Oswald',sans-serif] text-3xl leading-[1.15] font-bold tracking-tight text-[#212220] sm:text-4xl lg:text-5xl"
+      >
+        {contenido.titulo}
+      </h2>
+
+      <div class="mt-6 max-w-2xl space-y-5 text-left sm:text-center">
+        <p class="font-['Lora',serif] text-base leading-relaxed text-[#212220]/90 sm:text-lg">
+          {contenido.parrafos[0]}
+        </p>
+
+        <p
+          class="pt-2 font-['Lora',serif] text-base leading-relaxed font-medium text-[#405A46] italic sm:text-lg lg:text-xl"
+        >
+          {contenido.parrafos[1]}
+        </p>
+      </div>
+
+      <!-- Detalle decorativo -->
+      <div
+        class="mt-8 flex w-full items-center justify-center space-x-2 border-t border-[#A19E97]/40 pt-6"
+      >
+        <span class="h-2 w-2 rounded-full bg-[#405A46]"></span>
+        <span
+          class="font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold tracking-wider text-[#5F5A54] uppercase"
+        >
+          TAKE, TOOK & TAKEN
+        </span>
+        <span class="h-2 w-2 rounded-full bg-[#405A46]"></span>
+      </div>
+    </div>
+  </div>
+</section>

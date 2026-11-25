@@ -1,0 +1,54 @@
+---
+// Portada de Nosotros con CONTACTO.jpeg ocupando el 100% del cuadro sin bordes vacíos
+const imagenPortada = {
+  archivo: "/pack/imagenes/CONTACTO.jpeg",
+  alt: "Fotografía de portada de presentación - TAKE, TOOK & TAKEN",
+};
+---
+
+<section class="bg-[#E9DED3] py-12 text-[#212220] md:py-16 lg:py-24">
+  <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14">
+      <!-- Columna Izquierda: Título y Texto -->
+      <div class="flex flex-col justify-center space-y-6 text-left lg:col-span-7">
+        <span
+          class="font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold tracking-widest text-[#5F5A54] uppercase"
+        >
+          Sobre nosotras
+        </span>
+
+        <h1
+          class="font-['Oswald',sans-serif] text-4xl leading-[1.1] font-bold tracking-tight text-[#212220] sm:text-5xl lg:text-6xl"
+        >
+          Nuestra esencia, nuestra creatividad.
+        </h1>
+
+        <p class="pt-2 font-['Lora',serif] text-base leading-relaxed text-[#212220]/90 sm:text-lg">
+          Detrás de cada fotografía hay una idea, una historia y muchas ganas de crear algo
+          diferente. Nos apasiona experimentar, imaginar y transformar momentos en imágenes que
+          transmitan emociones y personalidad.
+        </p>
+
+        <div class="border-l-2 border-[#405A46] pt-2 pl-4">
+          <p class="font-['Lora',serif] text-sm text-[#5F5A54] italic sm:text-base">
+            "Tú imaginas, nosotras creamos y juntas convertimos tu idea en una imagen inolvidable."
+          </p>
+        </div>
+      </div>
+
+      <!-- Columna Derecha: Foto ocupando el 100% del cuadro sin franjas laterales -->
+      <div class="flex w-full justify-center lg:col-span-5">
+        <div
+          class="aspect-[3/4] max-h-[560px] w-full max-w-md overflow-hidden rounded-[8px] border border-[#A19E97] shadow-[0_4px_12px_rgb(0,0,0,0.12)] sm:aspect-[4/5]"
+        >
+          <img
+            src={imagenPortada.archivo}
+            alt={imagenPortada.alt}
+            loading="eager"
+            class="block h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

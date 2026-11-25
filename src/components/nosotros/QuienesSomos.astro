@@ -1,0 +1,60 @@
+---
+// Sección ¿Quiénes somos? con nosotras.jpeg completa sin cortes
+const datosSeccion = {
+  titulo: "Detrás de cada fotografía existe una idea.",
+  parrafo:
+    "Somos Mía y Francisca, dos jóvenes apasionadas por la creatividad y la fotografía. Creamos imágenes increíbles, únicas y personalizadas, donde cada idea se transforma en arte. ¡Queremos capturar tu esencia y hacer que cada foto tenga su propio estilo!",
+  imagen: "/pack/imagenes/nosotras.jpeg",
+  alt: "Nosotras",
+};
+---
+
+<section class="border-t border-[#A19E97]/40 bg-[#E9DED3] py-16 text-[#212220] md:py-24">
+  <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16">
+      <!-- Columna de Imagen: Foto de Mía y Francisca completa sin recortes -->
+      <div class="order-2 flex w-full justify-center lg:order-1 lg:col-span-5">
+        <div
+          class="flex w-full max-w-md items-center justify-center overflow-hidden rounded-[8px] border border-[#A19E97] bg-[#F1F1DB] p-2 shadow-[0_4px_12px_rgb(0,0,0,0.12)]"
+        >
+          <img
+            src={datosSeccion.imagen}
+            alt={datosSeccion.alt}
+            loading="lazy"
+            class="h-auto max-h-[560px] w-full rounded-[6px] object-contain"
+          />
+        </div>
+      </div>
+
+      <!-- Columna de Texto -->
+      <div
+        class="order-1 flex flex-col justify-center space-y-6 text-left lg:order-2 lg:col-span-7"
+      >
+        <span
+          class="font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold tracking-widest text-[#5F5A54] uppercase"
+        >
+          ¿Quiénes somos?
+        </span>
+
+        <h2
+          class="font-['Oswald',sans-serif] text-3xl leading-[1.15] font-bold tracking-tight text-[#212220] sm:text-4xl lg:text-5xl"
+        >
+          {datosSeccion.titulo}
+        </h2>
+
+        <p class="font-['Lora',serif] text-base leading-relaxed text-[#212220]/90 sm:text-lg">
+          {datosSeccion.parrafo}
+        </p>
+
+        <div class="flex items-center space-x-4 border-t border-[#A19E97]/40 pt-4">
+          <div class="h-2.5 w-2.5 rounded-full bg-[#405A46]"></div>
+          <span
+            class="font-['Oswald',sans-serif] text-base font-medium tracking-wide text-[#212220] uppercase"
+          >
+            Mía & Francisca · Creadoras de TAKE, TOOK & TAKEN
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

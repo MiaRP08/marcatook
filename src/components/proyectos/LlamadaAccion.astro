@@ -1,0 +1,42 @@
+---
+// Sección: Llamada a la acción (Cierre de la página Proyectos)
+const contenido = {
+  titulo: "¿Y si la próxima fotografía es la tuya?",
+  texto:
+    "Nos encantaría conocer tu idea y convertirla en una experiencia visual única. Cuéntanos qué imaginas y juntas crearemos algo especial.",
+  boton: {
+    texto: "QUIERO MI SESIÓN",
+    enlace: "/contacto",
+  },
+};
+---
+
+<section class="border-t border-[#A19E97]/40 bg-[#E9DED3] py-16 text-[#212220] md:py-24">
+  <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+    <!-- Bloque contenedor centrado con llamada a la acción -->
+    <div
+      class="mx-auto flex max-w-3xl flex-col items-center rounded-[8px] border border-[#A19E97] bg-[#F1F1DB] p-8 text-center shadow-[0_4px_12px_rgb(0,0,0,0.12)] sm:p-12 lg:p-16"
+    >
+      <h2
+        class="font-['Oswald',sans-serif] text-3xl leading-tight font-bold tracking-tight text-[#212220] sm:text-4xl lg:text-5xl"
+      >
+        {contenido.titulo}
+      </h2>
+
+      <p
+        class="mt-4 max-w-2xl font-['Lora',serif] text-base leading-relaxed text-[#5F5A54] sm:text-lg"
+      >
+        {contenido.texto}
+      </p>
+
+      <div class="mt-8 w-full sm:mt-10 sm:w-auto">
+        <a
+          href={contenido.boton.enlace}
+          class="inline-flex w-full items-center justify-center rounded-[8px] bg-[#405A46] px-10 py-4 text-center font-['Plus_Jakarta_Sans',sans-serif] text-sm font-semibold tracking-wider text-[#FFFFFF] uppercase shadow-[0_4px_12px_rgb(0,0,0,0.12)] transition-all duration-300 hover:opacity-90 active:scale-[0.98] sm:w-auto"
+        >
+          {contenido.boton.texto}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

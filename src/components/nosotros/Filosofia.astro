@@ -1,0 +1,72 @@
+---
+// Sección: Nuestra filosofía y pilares (Boceto 2)
+const pilares = [
+  {
+    numero: '01',
+    titulo: 'Creatividad',
+    descripcion: 'Exploramos nuevas ideas, estilos y composiciones para crear fotografías fuera de lo común.'
+  },
+  {
+    numero: '02',
+    titulo: 'Personalización',
+    descripcion: 'Cada trabajo se adapta a los gustos, ideas y personalidad de nuestros clientes, buscando que cada imagen refleje su esencia.'
+  },
+  {
+    numero: '03',
+    titulo: 'Estilo',
+    descripcion: 'Cuidamos los colores, la iluminación, la composición y cada detalle para conseguir resultados visuales únicos y especiales.'
+  }
+];
+---
+
+<section class="py-16 md:py-24 bg-[#E9DED3] border-t border-[#A19E97]/40 text-[#212220]">
+  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Encabezado de la Filosofía -->
+    <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+      <span class="font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold tracking-widest uppercase text-[#5F5A54]">
+        Nuestra filosofía
+      </span>
+
+      <h2 class="font-['Oswald',sans-serif] text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#212220] leading-[1.15] mt-2">
+        Lo diferente nos hace únicos.
+      </h2>
+
+      <p class="font-['Lora',serif] text-base sm:text-lg text-[#5F5A54] mt-3">
+        Nuestra filosofía se basa en tres pilares:
+      </p>
+    </div>
+
+    <!-- Tres Tarjetas Independientes de los Pilares -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+      {pilares.map((pilar) => (
+        <article class="rounded-[8px] border border-[#A19E97] bg-[#F1F1DB] p-8 shadow-[0_4px_12px_rgb(0,0,0,0.12)] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
+          <div>
+            <!-- Número de pilar -->
+            <div class="flex items-center justify-between border-b border-[#A19E97]/40 pb-4 mb-6">
+              <span class="font-['Oswald',sans-serif] text-lg font-bold text-[#405A46]">
+                {pilar.numero}
+              </span>
+              <span class="w-2 h-2 rounded-full bg-[#405A46]"></span>
+            </div>
+
+            <h3 class="font-['Oswald',sans-serif] text-2xl font-bold text-[#212220] tracking-wide mb-3">
+              {pilar.titulo}
+            </h3>
+
+            <p class="font-['Lora',serif] text-base leading-relaxed text-[#5F5A54]">
+              {pilar.descripcion}
+            </p>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-[#A19E97]/30">
+            <span class="font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold uppercase tracking-wider text-[#405A46]">
+              Pilar TAKE, TOOK & TAKEN
+            </span>
+          </div>
+        </article>
+      ))}
+    </div>
+
+  </div>
+</section>

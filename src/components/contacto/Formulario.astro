@@ -1,0 +1,195 @@
+---
+// Sección: Formulario de contacto (Boceto 4)
+const datosFormulario = {
+  titulo: "Cuéntanos tu idea.",
+  intro:
+    "Queremos conocer lo que imaginas. Completa el siguiente formulario y cuéntanos cómo te gustaría que fuera tu sesión fotográfica.",
+  boton: "ENVIAR MENSAJE",
+  mensajeExito:
+    "¡Gracias por escribirnos! Hemos recibido tu mensaje y pronto nos pondremos en contacto contigo.",
+};
+---
+
+<section class="border-t border-[#A19E97]/40 bg-[#E9DED3] py-16 text-[#212220] md:py-24">
+  <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+    <!-- Contenedor Centrado (Boceto 4) -->
+    <div
+      class="mx-auto max-w-3xl rounded-[8px] border border-[#A19E97] bg-[#F1F1DB] p-8 shadow-[0_4px_12px_rgb(0,0,0,0.12)] sm:p-12 lg:p-16"
+    >
+      <!-- Encabezado del Formulario -->
+      <div class="mb-10 text-center">
+        <span
+          class="font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold tracking-widest text-[#5F5A54] uppercase"
+        >
+          Formulario de contacto
+        </span>
+
+        <h2
+          class="mt-2 font-['Oswald',sans-serif] text-3xl leading-[1.15] font-bold tracking-tight text-[#212220] sm:text-4xl lg:text-5xl"
+        >
+          {datosFormulario.titulo}
+        </h2>
+
+        <p
+          class="mx-auto mt-3 max-w-xl font-['Lora',serif] text-base leading-relaxed text-[#5F5A54] sm:text-lg"
+        >
+          {datosFormulario.intro}
+        </p>
+      </div>
+
+      <!-- Formulario -->
+      <form id="formulario-contacto" class="space-y-6" novalidate>
+        <!-- Campo 1: Nombre completo -->
+        <div>
+          <label
+            for="nombre"
+            class="mb-2 block font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold tracking-wider text-[#212220] uppercase"
+          >
+            Nombre completo <span class="text-[#405A46]">*</span>
+          </label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            required
+            placeholder="Ingresa tu nombre y apellido"
+            class="w-full rounded-[8px] border border-[#A19E97] bg-[#E9DED3]/40 px-4 py-3.5 font-['Lora',serif] text-base text-[#212220] placeholder-[#5F5A54]/70 transition-colors focus:border-[#405A46] focus:bg-[#FFFFFF] focus:outline-none"
+          />
+        </div>
+
+        <!-- Campo 2: Correo electrónico -->
+        <div>
+          <label
+            for="correo"
+            class="mb-2 block font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold tracking-wider text-[#212220] uppercase"
+          >
+            Correo electrónico <span class="text-[#405A46]">*</span>
+          </label>
+          <input
+            type="email"
+            id="correo"
+            name="correo"
+            required
+            placeholder="ejemplo@correo.com"
+            class="w-full rounded-[8px] border border-[#A19E97] bg-[#E9DED3]/40 px-4 py-3.5 font-['Lora',serif] text-base text-[#212220] placeholder-[#5F5A54]/70 transition-colors focus:border-[#405A46] focus:bg-[#FFFFFF] focus:outline-none"
+          />
+        </div>
+
+        <!-- Campo 3: Tipo de fotografía que deseas -->
+        <div>
+          <label
+            for="tipo_fotografia"
+            class="mb-2 block font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold tracking-wider text-[#212220] uppercase"
+          >
+            Tipo de fotografía que deseas <span class="text-[#405A46]">*</span>
+          </label>
+          <input
+            type="text"
+            id="tipo_fotografia"
+            name="tipo_fotografia"
+            required
+            placeholder="Ej. Retrato en estudio, fotografía creativa, personal..."
+            class="w-full rounded-[8px] border border-[#A19E97] bg-[#E9DED3]/40 px-4 py-3.5 font-['Lora',serif] text-base text-[#212220] placeholder-[#5F5A54]/70 transition-colors focus:border-[#405A46] focus:bg-[#FFFFFF] focus:outline-none"
+          />
+        </div>
+
+        <!-- Campo 4: Descripción de tu idea o proyecto -->
+        <div>
+          <label
+            for="descripcion"
+            class="mb-2 block font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold tracking-wider text-[#212220] uppercase"
+          >
+            Descripción de tu idea o proyecto <span class="text-[#405A46]">*</span>
+          </label>
+          <textarea
+            id="descripcion"
+            name="descripcion"
+            rows="5"
+            required
+            placeholder="Cuéntanos los detalles, preferencias, estilo o fecha aproximada de tu sesión..."
+            class="w-full resize-y rounded-[8px] border border-[#A19E97] bg-[#E9DED3]/40 px-4 py-3.5 font-['Lora',serif] text-base text-[#212220] placeholder-[#5F5A54]/70 transition-colors focus:border-[#405A46] focus:bg-[#FFFFFF] focus:outline-none"
+          ></textarea>
+        </div>
+
+        <!-- Botón de Envío -->
+        <div class="pt-4">
+          <button
+            type="submit"
+            id="btn-enviar"
+            class="w-full cursor-pointer rounded-[8px] bg-[#405A46] px-8 py-4 text-center font-['Plus_Jakarta_Sans',sans-serif] text-sm font-semibold tracking-wider text-[#FFFFFF] uppercase shadow-[0_4px_12px_rgb(0,0,0,0.12)] transition-all duration-300 hover:opacity-90 active:scale-[0.99]"
+          >
+            {datosFormulario.boton}
+          </button>
+        </div>
+      </form>
+
+      <!-- Mensaje de Estado: Éxito -->
+      <div
+        id="mensaje-exito"
+        class="mt-6 hidden rounded-[8px] bg-[#405A46] p-6 text-center font-['Lora',serif] text-base text-[#FFFFFF] shadow-md transition-all duration-300 sm:text-lg"
+      >
+        <p class="leading-relaxed font-medium">
+          {datosFormulario.mensajeExito}
+        </p>
+      </div>
+
+      <!-- Mensaje de Estado: Error -->
+      <div
+        id="mensaje-error"
+        class="mt-6 hidden rounded-[8px] bg-[#212220] p-4 text-center font-['Lora',serif] text-sm text-[#FFFFFF] shadow-md"
+      >
+        <p>
+          Por favor, completa todos los campos con un formato de correo válido e inténtalo
+          nuevamente.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupFormulario() {
+    const form = document.getElementById("formulario-contacto") as HTMLFormElement;
+    const msgExito = document.getElementById("mensaje-exito");
+    const msgError = document.getElementById("mensaje-error");
+    const btnEnviar = document.getElementById("btn-enviar") as HTMLButtonElement;
+
+    if (!form || !msgExito || !msgError || !btnEnviar) return;
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      msgError.classList.add("hidden");
+      msgExito.classList.add("hidden");
+
+      const nombre = (document.getElementById("nombre") as HTMLInputElement).value.trim();
+      const correo = (document.getElementById("correo") as HTMLInputElement).value.trim();
+      const tipo = (document.getElementById("tipo_fotografia") as HTMLInputElement).value.trim();
+      const descripcion = (
+        document.getElementById("descripcion") as HTMLTextAreaElement
+      ).value.trim();
+
+      // Validación de correo electrónico
+      const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!nombre || !correo || !tipo || !descripcion || !regexCorreo.test(correo)) {
+        msgError.classList.remove("hidden");
+        return;
+      }
+
+      // Simulación de envío exitoso
+      btnEnviar.disabled = true;
+      btnEnviar.textContent = "ENVIANDO...";
+
+      setTimeout(() => {
+        btnEnviar.disabled = false;
+        btnEnviar.textContent = "ENVIAR MENSAJE";
+        form.reset();
+        form.classList.add("hidden");
+        msgExito.classList.remove("hidden");
+      }, 700);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", setupFormulario);
+  document.addEventListener("astro:page-load", setupFormulario);
+</script>

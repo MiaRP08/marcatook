@@ -1,0 +1,71 @@
+---
+// Sección: Presentación y Categorías limpias (sin Grupo E, G, J, R)
+const categorias = [
+  { nombre: "Retratos", ancla: "#grupo-e" },
+  { nombre: "Fotografía Creativa", ancla: "#grupo-g" },
+  { nombre: "Retrato en Estudio", ancla: "#grupo-j" },
+  { nombre: "Fotografía Personalizada", ancla: "#grupo-r" },
+];
+
+const contenido = {
+  titulo: "Cada imagen tiene algo que contar.",
+  descripcion:
+    "Descubre una selección de nuestros proyectos fotográficos, donde exploramos diferentes estilos, conceptos y formas de expresión. Cada fotografía representa una idea convertida en arte, con detalles que hacen de cada imagen una creación especial.",
+};
+---
+
+<section class="border-t border-[#A19E97]/40 bg-[#E9DED3] py-16 text-[#212220] md:py-20">
+  <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto mb-12 flex max-w-3xl flex-col items-center space-y-4 text-center">
+      <span
+        class="font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold tracking-widest text-[#5F5A54] uppercase"
+      >
+        Exploración Visual
+      </span>
+
+      <h2
+        class="font-['Oswald',sans-serif] text-3xl leading-[1.15] font-bold tracking-tight text-[#212220] sm:text-4xl lg:text-5xl"
+      >
+        {contenido.titulo}
+      </h2>
+
+      <p class="pt-2 font-['Lora',serif] text-base leading-relaxed text-[#212220]/90 sm:text-lg">
+        {contenido.descripcion}
+      </p>
+    </div>
+
+    <!-- Botones de Categorías limpios -->
+    <div class="flex w-full justify-center">
+      <div
+        class="no-scrollbar flex max-w-full items-center justify-start gap-3 overflow-x-auto px-2 pt-2 pb-4 sm:justify-center sm:gap-4"
+        role="navigation"
+        aria-label="Categorías de proyectos"
+      >
+        {
+          categorias.map((cat, index) => (
+            <a
+              href={cat.ancla}
+              class={`rounded-[8px] border border-[#A19E97] px-6 py-3 font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold tracking-wider whitespace-nowrap uppercase shadow-[0_4px_12px_rgb(0,0,0,0.12)] transition-all duration-300 active:scale-[0.98] sm:text-sm ${
+                index === 0
+                  ? "bg-[#405A46] text-[#FFFFFF] hover:opacity-90"
+                  : "bg-[#F1F1DB] text-[#212220] hover:bg-[#405A46] hover:text-[#FFFFFF]"
+              }`}
+            >
+              {cat.nombre}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>

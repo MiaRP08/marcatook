@@ -1,0 +1,41 @@
+---
+// Sección: Portada principal de la página Proyectos (Referencia 1a: Identidad limpia y minimalista)
+const datosPortada = {
+  etiqueta: "Portafolio fotográfico",
+  titulo: "Nuestro trabajo habla por nosotros.",
+  intro:
+    "Una colección de ideas, momentos y fotografías creadas para demostrar que la creatividad no tiene límites.",
+};
+---
+
+<section class="bg-[#E9DED3] py-16 text-[#212220] md:py-24 lg:py-28">
+  <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+    <!-- Encabezado editorial centrado y minimalista (Ref. 1a: 818 Tequila) -->
+    <div class="mx-auto flex max-w-3xl flex-col items-center space-y-5 text-center">
+      <span
+        class="font-['Plus_Jakarta_Sans',sans-serif] text-xs font-semibold tracking-widest text-[#5F5A54] uppercase"
+      >
+        {datosPortada.etiqueta}
+      </span>
+
+      <h1
+        class="font-['Oswald',sans-serif] text-4xl leading-[1.1] font-bold tracking-tight text-[#212220] sm:text-5xl lg:text-6xl"
+      >
+        {datosPortada.titulo}
+      </h1>
+
+      <p
+        class="max-w-2xl pt-2 font-['Lora',serif] text-lg leading-relaxed text-[#212220]/90 sm:text-xl"
+      >
+        {datosPortada.intro}
+      </p>
+
+      <!-- Detalle decorativo minimalista -->
+      <div class="flex items-center justify-center space-x-3 pt-6">
+        <span class="h-[1px] w-8 bg-[#A19E97]"></span>
+        <span class="h-2 w-2 rounded-full bg-[#405A46]"></span>
+        <span class="h-[1px] w-8 bg-[#A19E97]"></span>
+      </div>
+    </div>
+  </div>
+</section>

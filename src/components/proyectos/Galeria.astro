@@ -1,0 +1,180 @@
+---
+// Sección: Galería de proyectos con títulos limpios (sin las etiquetas de Grupo)
+const gruposProyectos = [
+  {
+    id: 'grupo-e',
+    nombre: 'Retratos',
+    descripcion: 'Sesiones personalizadas enfocadas en transmitir autenticidad y estilo personal.',
+    fotos: [
+      { archivo: '/pack/imagenes/FT1E.jpeg', alt: 'Retrato personalizado - Foto 1' },
+      { archivo: '/pack/imagenes/FT2E.jpeg', alt: 'Retrato personalizado - Foto 2' }
+    ]
+  },
+  {
+    id: 'grupo-g',
+    nombre: 'Fotografía Creativa',
+    descripcion: 'Exploración artística de luces, perspectivas y composiciones visuales únicas.',
+    fotos: [
+      { archivo: '/pack/imagenes/FT1G.jpeg', alt: 'Fotografía creativa - Foto 1' },
+      { archivo: '/pack/imagenes/FT2G.jpeg', alt: 'Fotografía creativa - Foto 2' },
+      { archivo: '/pack/imagenes/FT3G.jpeg', alt: 'Fotografía creativa - Foto 3' },
+      { archivo: '/pack/imagenes/FT4G.jpeg', alt: 'Fotografía creativa - Foto 4' }
+    ]
+  },
+  {
+    id: 'grupo-j',
+    nombre: 'Retrato en Estudio',
+    descripcion: 'Sesiones en estudio que destacan la personalidad, la actitud y la iluminación profesional.',
+    fotos: [
+      { archivo: '/pack/imagenes/FT1J.jpeg', alt: 'Retrato en estudio - Foto 1' },
+      { archivo: '/pack/imagenes/FT2J.jpeg', alt: 'Retrato en estudio - Foto 2' }
+    ]
+  },
+  {
+    id: 'grupo-r',
+    nombre: 'Fotografía Personalizada',
+    descripcion: 'Proyectos a medida pensados para contar historias con un lenguaje visual distintivo.',
+    fotos: [
+      { archivo: '/pack/imagenes/FT1R.jpeg', alt: 'Fotografía personalizada - Foto 1' },
+      { archivo: '/pack/imagenes/FT2R.jpeg', alt: 'Fotografía personalizada - Foto 2' },
+      { archivo: '/pack/imagenes/FT3R.jpeg', alt: 'Fotografía personalizada - Foto 3' },
+      { archivo: '/pack/imagenes/FT4R.jpeg', alt: 'Fotografía personalizada - Foto 4' }
+    ]
+  }
+];
+---
+
+<section class="py-12 md:py-20 bg-[#E9DED3] border-t border-[#A19E97]/40 text-[#212220]">
+  <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 lg:space-y-28">
+    
+    {gruposProyectos.map((grupo) => (
+      <div id={grupo.id} class="scroll-mt-24 space-y-6">
+        
+        <!-- Encabezado limpio de cada categoría -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between border-b border-[#A19E97]/50 pb-4 gap-2">
+          <div>
+            <h3 class="font-['Oswald',sans-serif] text-2xl sm:text-3xl font-bold text-[#212220] tracking-wide mb-1">
+              {grupo.nombre}
+            </h3>
+            <p class="font-['Lora',serif] text-sm sm:text-base text-[#5F5A54]">
+              {grupo.descripcion}
+            </p>
+          </div>
+          <span class="font-['Plus_Jakarta_Sans',sans-serif] text-xs text-[#5F5A54] uppercase tracking-wider font-semibold">
+            {grupo.fotos.length} fotografías
+          </span>
+        </div>
+
+        <!-- Rejilla de fotos -->
+        <div class="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-5 overflow-x-auto sm:overflow-visible pb-4 sm:pb-0 snap-x snap-mandatory no-scrollbar">
+          {grupo.fotos.map((foto) => (
+            <div 
+              class="flex-shrink-0 w-[80vw] sm:w-auto snap-center group relative rounded-[8px] border border-[#A19E97] bg-[#F1F1DB] overflow-hidden shadow-[0_4px_12px_rgb(0,0,0,0.12)] cursor-pointer"
+              data-accion="ampliar"
+              data-src={foto.archivo}
+              data-alt={foto.alt}
+            >
+              <div class="aspect-[3/4] w-full overflow-hidden bg-[#E9DED3]">
+                <img
+                  src={foto.archivo}
+                  alt={foto.alt}
+                  loading="lazy"
+                  class="w-full h-full object-cover object-center sm:grayscale sm:contrast-105 transition-all duration-500 ease-out group-hover:grayscale-0 group-hover:scale-105"
+                />
+              </div>
+
+              <div class="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[#212220]/70 text-white p-2 rounded-full backdrop-blur-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                </svg>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    ))}
+
+  </div>
+
+  <!-- Visor de Imagen Ampliada -->
+  <div 
+    id="modal-visor" 
+    class="fixed inset-0 z-50 bg-[#212220]/90 backdrop-blur-sm hidden items-center justify-center p-4 transition-all duration-300"
+    role="dialog"
+    aria-modal="true"
+  >
+    <button 
+      id="cerrar-modal" 
+      class="absolute top-5 right-5 text-white/80 hover:text-white bg-[#212220]/60 p-3 rounded-full hover:bg-[#212220] transition-colors"
+      aria-label="Cerrar visor"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <div class="max-w-4xl max-h-[85vh] p-2 flex flex-col items-center">
+      <img 
+        id="imagen-ampliada" 
+        src="" 
+        alt="" 
+        class="max-w-full max-h-[80vh] object-contain rounded-[8px] shadow-2xl border border-[#A19E97]/40" 
+      />
+      <p id="pie-imagen-ampliada" class="font-['Lora',serif] text-sm text-white/90 mt-3 text-center"></p>
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupVisor() {
+    const modal = document.getElementById('modal-visor');
+    const imgModal = document.getElementById('imagen-ampliada') as HTMLImageElement;
+    const pieModal = document.getElementById('pie-imagen-ampliada');
+    const btnCerrar = document.getElementById('cerrar-modal');
+    const tarjetas = document.querySelectorAll('[data-accion="ampliar"]');
+
+    if (!modal || !imgModal || !btnCerrar) return;
+
+    tarjetas.forEach((tarjeta) => {
+      tarjeta.addEventListener('click', () => {
+        const src = tarjeta.getAttribute('data-src');
+        const alt = tarjeta.getAttribute('data-alt');
+        if (src) {
+          imgModal.src = src;
+          imgModal.alt = alt || '';
+          if (pieModal) pieModal.textContent = alt || '';
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    function cerrar() {
+      modal?.classList.add('hidden');
+      modal?.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    btnCerrar.addEventListener('click', cerrar);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) cerrar();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') cerrar();
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', setupVisor);
+  document.addEventListener('astro:page-load', setupVisor);
+</script>
+
+<style>
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
